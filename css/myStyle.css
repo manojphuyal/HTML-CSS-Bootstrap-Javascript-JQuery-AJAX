@@ -1,0 +1,26 @@
+h4 {
+    color: blue;
+}
+
+.MyH1{
+    color:red;
+}
+
+#MyH2{
+    color: rgb(177, 177, 61);
+}
+
+.container .abcRow{
+    background-color: rgb(234, 213, 253);
+    border-style: solid;
+    text-align: center;
+}
+
+.container .formClas{
+    box-shadow: 3px 3px 5px 6px #ccc;
+    padding: 5%;
+    margin-top: 2%;
+}
+.Myb{
+    margin-top: 2%;
+}
