@@ -3,81 +3,193 @@
 <head>
     <title>My Title</title>
     <!-- Bootstrap css-->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
-        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="content/bootstrap-4.3.1-dist/css/bootstrap.css">
+    <link rel="stylesheet" href="content/bootstrap-4.3.1-dist/css/bootstrap.min.css">
     <!-- /Bootstrap css-->
     <link rel="stylesheet" href="css/myStyle.css">
 </head>
 
 <body>
-    <!-- Header part -->
-    <nav class="navbar navbar-expand-sm bg-light navbar-light">
-        <a href="#" class="navbar-brand">
-            <img src="https://angular.io/assets/images/logos/angular/shield-large.svg" alt="" style="height: 50px;">Angular
-        </a>
-        <ul class="navbar-nav">
-            <li class="nav-item"><a class="nav-link" href="#">Home</a></li>
-            <li class="nav-item"><a class="nav-link" href="#">About</a></li>
-            <li class="nav-item"><a class="nav-link" href="#">Contact</a></li>
-        </ul>
-    </nav>
-    <!-- /Header part -->
+    <div id="loading"></div>
+    <div class="content">
+        <!-- Header part -->
+        <nav class="navbar navbar-expand-sm bg-light navbar-light">
+            <a href="#" class="navbar-brand">
+                <img src="https://angular.io/assets/images/logos/angular/shield-large.svg" alt=""
+                    style="height: 50px;">Angular
+            </a>
+            <ul class="navbar-nav">
+                <li class="nav-item"><a class="nav-link" href="#">Home</a></li>
+                <li class="nav-item"><a class="nav-link" href="#">About</a></li>
+                <li class="nav-item"><a class="nav-link" href="#">Contact</a></li>
+            </ul>
+        </nav>
+        <!-- /Header part -->
 
-    <div class="container">
-        <div class="row">
-            <div class="col-4 abcRow"><h4>Hello From Body.</h1></div>
-            <div class="col-4 abcRow"><h4 class="MyH1">Hello From Body1.</h1></div>
-            <div class="col-4 abcRow"><h4 id="MyH2">Hello From Body2.</h1></div>
-        </div>
-        <div class="row">
-            <div class="col-6 abcRow"><p id="ds">Hetauda City Collage</p></div>
-            <div class="col-6 abcRow"><p id="dt"></p></div>
-        </div>
-        <div class="row">
-            <div class="col-12 abcRow">
-                <button type="button" class="btn btn-danger" onclick="ab()">Click Me</button>
-            </div>
-        </div>
-        <form action="" class="formClas">
-            <div class="form-group">
-                <div class="row">
-                    <div class="col-6">
-                        <label for="">First Name</label>
-                        <input type="text" onkeyup="fName(this)" class="form-control" placeholder="Enter First Name">
-                    </div>
-                    <div class="col-6">
-                        <label for="">Last Name</label>
-                        <input type="text" keyup="lName(this)" class="form-control" placeholder="Enter Last Name">
-                    </div>
+        <div class="container">
+            <div class="row">
+                <div class="col-4 abcRow">
+                    <h4>Hello From Body.</h1>
                 </div>
-                <div class="row Myb">
-                    <div class="col-4">
-                        <button type="button" class="btn btn-primary">Register</button>
-                    </div>
-                    <div class="col-2">
-
-                    </div>
-                    <div class="col-6">
-                       Full Name: <p id="fullName"></p>
-                    </div>
+                <div class="col-4 abcRow">
+                    <h4 class="MyH1">Hello From Body1.</h1>
+                </div>
+                <div class="col-4 abcRow">
+                    <h4 id="MyH2">Hello From Body2.</h1>
                 </div>
             </div>
-        </form>
+            <div class="row">
+                <div class="col-6 abcRow">
+                    <p id="ds">Hetauda City Collage</p>
+                </div>
+                <div class="col-6 abcRow">
+                    <p id="dt"></p>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-4 abcRow">
+                    <button type="button" class="btn btn-danger" data-toggle="collapse" href="#formCollapse">Click
+                        Me</button>
+                </div>
+                <div class="col-4  abcRow">
+                    <button type="button" class="btn btn-danger" data-toggle="modal"
+                        data-target="#Modal">Delete</button>
+                </div>
+                <div class="col-4  abcRow">
+                    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#AccModal">Register
+                        User</button>
+                </div>
+            </div>
+            <div class="collapse" id="formCollapse">
+                <form action="" class="formClas">
+                    <div class="form-group">
+                        <div class="row">
+                            <div class="col-6">
+                                <label for="">First Name</label>
+                                <input type="text" id="fName" class="form-control" placeholder="Enter First Name">
+                            </div>
+                            <div class="col-6">
+                                <label for="">Last Name</label>
+                                <input type="text" id="lName" class="form-control" placeholder="Enter Last Name">
+                            </div>
+                        </div>
+                        <div class="row Myb">
+                            <div class="col-4">
+                                <button type="button" class="btn btn-primary hidePTag">Hide</button>
+                            </div>
+                            <div class="col-2">
+                            </div>
+                            <div class="col-6 hideMe">
+                                Full Name: <p id="fullName"></p>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-3">
+                                <button type="button" class="btn btn btn-primary" id="btn1">Button1</button>
+                            </div>
+                            <div class="col-3">
+                                <input type="text" class="btn2">
+                            </div>
+                            <div class="col-3">
+                                <button type="button" class="btn btn-success" onclick="btn()">Button3</button>
+                            </div>
+                            <div class="col-3">
+
+                            </div>
+                        </div>
+                    </div>
+                </form>
+            </div>
+
+        </div>
     </div>
 
 
-    
-    
-    
-    
-    
+    <div class="modal fade" id="Modal">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Modal Example Delete</h5>
+                    <button type="button" class="close" data-dismiss="modal" arial-label="Close">
+                        <span arial-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    You are clicked !
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-danger">Delete</button>
+                </div>
+            </div>
+        </div>
+    </div>
 
-        <!-- Bootstrap JS -->
-        <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
-            integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
-            crossorigin="anonymous"></script>
-        <!-- /Bootstrap JS -->
-        <script src="js/myJS.js"></script>
+
+
+
+    <!-- Modal -->
+    <div class="modal fade bd-modal-lg" id="AccModal">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+
+                <div class="modal-header">
+                    <h5 class="modal-title">Account Registration Form</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <form id="RegFormVali">
+                <div class="modal-body">
+                        <div class="form-group">
+                            <div class="row">
+                                <div class="col-6">
+                                    <label for=""> Full Name:</label>
+                                    <input type="text" id="fullname" name="fullname" class="form-control"
+                                        placeholder="Enter Full Name">
+                                </div>
+                                <div class="col-6">
+                                    <label for=""> Phone No.</label>
+                                    <input type="Phone" id="phone" name="phone" class="form-control"
+                                        placeholder="Enter Phone No">
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-6">
+                                    <label for=""> Email:</label>
+                                    <input type="Email" id="mail" name="mail" class="form-control"
+                                        placeholder="Enter Email">
+                                </div>
+                                <div class="col-6">
+                                    <label for=""> Password:</label>
+                                    <input type="password" id="pass" name="pass" class="form-control"
+                                        placeholder="Enter Password">
+                                </div>
+                            </div>
+                        </div>
+                            <br>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                            <button type="button" class="btn btn-primary" id="RegValSubmit">Submit</button>
+                        </div>
+                </div>
+            </form>
+            </div>
+        </div>
+    </div>
+    <!-- /Modal -->
+
+
+
+
+
+    <script src="content/jquery-3.6.0.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/jquery-validation@1.19.3/dist/jquery.validate.js"></script>
+    <!-- /Bootstrap JS -->
+    <script src="content/bootstrap-4.3.1-dist/js/bootstrap.js"></script>
+    <script src="content/bootstrap-4.3.1-dist/js/bootstrap.min.js"></script>
+    <!-- Bootstrap JS -->
+    <script src="js/myJS.js"></script>
 
 </body>
 
