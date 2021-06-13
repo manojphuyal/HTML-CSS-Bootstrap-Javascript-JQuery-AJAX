@@ -1,3 +1,3 @@
-# HTML_CSS_Bootstrap_JS
+# HTML-CSS-Bootstrap-JS
 
 Here we learned about HTML CSS Bootstrap and JS
