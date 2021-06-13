@@ -15,28 +15,82 @@ $(document).ready(function(){
     $("#loading").fadeOut(2000,function(){
         $(".content").fadeIn(1000);
     });
+    $("#tbl").hide();
 
-
+    $.validator.addMethod("validateMobileNo", function (value) {return /^9{1,9}\d{9}$/.test(value);
+});
+$.validator.addMethod("validateFullName", function (value) {return /([A-Z][a-z]{3,} )([A-Z][a-z]{3,} )?([A-Z][a-z]{2,})/.test(value);
+});
         $("#RegFormVali").validate({
             rules:{
                 fullname:{
                     required:true,
+                    validateFullName:true
                 },
                 phone:{
-                    required:true  
+                    required:true,
+                    maxlength:10,
+                    minlength:10,
+                    number:true,
+                    validateMobileNo:true
                 },
                 mail:{
-                    required:true  
+                    required:true,
+                    email:true  
                 },
                 pass:{
-                    required:true  
+                    required:true,
+                    maxlength:10,
+                    minlength:6,
                 }
             },
             messages:{
                 fullname:{
-                    required:"Full name is required"
+                    required:"Full name is required",
+                    validateFullName:"Enter valid Full Name"
                 },
+                phone:{
+                    required:"Phone no is required",
+                    number:"Only number valid",
+                    maxlength:"Enter max 10 digit",
+                    minlength:"Enter min 10 digit",
+                    validateMobileNo:"Phone no starts with 9"
+
+                },
+                mail:{
+                    required:"Email is required",
+                    email:"Enter valid email"
+                },
+                pass:{
+                    required:"Password is required",
+                    maxlength:"Enter max 10 digit",
+                    minlength:"Enter min 6 digit",
+                }
             }
+        });
+
+
+        $("#RegValSubmit").click(function(){
+            debugger;
+            if($("#RegFormVali").valid()){
+               var fullname = $("#fullname").val();
+               var phoneno = $("#phone").val();
+               var email = $("#mail").val();
+               $("#i").html(1);
+               $("#f").html(fullname);
+               $("#p").html(phoneno);
+               $("#e").html(email);
+               $("#tbl").show();
+               $("#fullname").val("");
+               $("#phone").val("");
+               $("#mail").val("");
+               $("#pass").val("");
+               $("#AccModal").modal("toggle");
+            }else{
+                return false;
+            }
+
+
         });
 
 
